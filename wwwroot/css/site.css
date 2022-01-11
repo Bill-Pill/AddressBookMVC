@@ -1,3 +1,34 @@
+:root {
+    --primary-color: #CD2800;
+    --secondary-color: #0271A7;
+    --dark-color: #424242;
+    --white-color: #BDBDBD;
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+    padding-right: 1rem;
+}
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .social > a {
+    color: var(--white-color);
+}
+
+footer .social > a:hover {
+    opacity: 0.9;
+    color: var(--secondary-color);
+}
+
 html {
   font-size: 14px;
 }
@@ -14,5 +45,35 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    color: var(--dark-color)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+.bsicon {
+    color: #8312FA;
+}
+
+.jsicon {
+    color: #F0DB4F;
+}
+
+.html5icon {
+    color: #E44D26;
+}
+
+.css3icon {
+    color: #0A71B8;
+}
+
+.checklist > li i {
+    color: var(--secondary-color)
 }
