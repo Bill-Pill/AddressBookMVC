@@ -24,7 +24,6 @@ namespace AddressBookMVC.Models
         public string? Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string ?Phone { get; set; }
-        [Required]
         public DateTime ?Created { get; set; }
         [NotMapped]
         [Display(Name = "Image")]

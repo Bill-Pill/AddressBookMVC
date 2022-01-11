@@ -62,6 +62,8 @@ namespace AddressBookMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                contact.Created = DateTime.Now;
+
                 if (contact.ImageFile != null)
                 {
                     contact.ImageData = await _imageService.ConvertFileToByteArrayAsync(contact.ImageFile);
