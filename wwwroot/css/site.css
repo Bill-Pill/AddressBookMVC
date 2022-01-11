@@ -12,8 +12,6 @@ nav {
 footer {
     background-color: var(--dark-color);
     padding-right: 1rem;
-}
-.sticky-footer {
     position: sticky;
     left: 0;
     bottom: 0;
@@ -30,18 +28,15 @@ footer .social > a:hover {
 }
 
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
 }
 
 body {
