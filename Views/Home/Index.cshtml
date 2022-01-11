@@ -2,7 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
+    <div class="col order-last order-lg-first">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Tidy Book: A Coding Project</h1>
+        <h4 class="lead">
+            An address book application using CRUD operations.
+        </h4>
+        <ul class="fa-ul pt-2 checklist">
+            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>CSS and Bootstrap Layout</li>
+            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>C# & .NET 6 Fundamentals</li>
+            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>ASP.NET Core MVC</li>
+            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Database integration with PostgresSQL</li>
+            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Deployment with Heroku Continuous Deployment</li>
+        </ul>
+        <div>
+            <a type="button" class="btn btn-outline-dark btn-lg px-4 me-md-2" href="Contacts">Try Me!</a>
+        </div>
+        <h5 class="fw-bold mt-5">
+            <div class="d-flex">
+                <div class="row">
+                    <div class="col"><img src="img/c.svg" height="70" /></div>
+                    <div class="col"><img src="img/heroku.svg" height="70" /></div>
+                    <div class="col"><img src="img/dotnetMVC.svg" height="70" /></div>
+                    <div class="col"><img src="img/PostgreSQL.svg" height="70" /></div>
+                    <div class="col"><i class="fab fa-bootstrap fa-4x bsicon"></i></div>
+                    <div class="col"><i class="fab fa-html5 fa-4x html5icon"></i></div>
+                    <div class="col"><i class="fab fa-css3-alt fa-4x css3icon"></i></div>
+
+                </div>
+            </div>
+        </h5>
+    </div>
+    <div class="col d-flex align-content-center">
+        <img src="img/brand.svg" class="img-fluid center-block d-block mx-auto" alt="App Logo" width="700"
+             height="500">
+    </div>
 </div>
