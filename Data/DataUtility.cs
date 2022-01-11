@@ -10,7 +10,7 @@ namespace AddressBookMVC.Data
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             //It will be automatically overwritten if we are running on Heroku
-            var databaseUrl = Environment.GetEnvironmentVariable("postgres://nebhzcgdysnnvn:0cacac847a3cce4a377b074a8d54f34500274aeaeef666fcb8ecaeb087a16fc7@ec2-44-193-111-218.compute-1.amazonaws.com:5432/dbfqjcp8a8mh79");
+            var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
             return string.IsNullOrEmpty(databaseUrl) ? connectionString : BuildConnectionString(databaseUrl);
         }
