@@ -98,7 +98,7 @@ namespace AddressBookMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,Address1,Address2,City,State,Zip,Email,Phone,Created,ImageData,ImageFile,ImageType,Id")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,Address1,Address2,City,State,Zip,Email,Phone,Created,ImageData,ImageFile,ImageType,Id")] Contact contact, IFormFile newImage)
         {
             if (id != contact.Id)
             {
@@ -109,7 +109,15 @@ namespace AddressBookMVC.Controllers
             {
                 try
                 {
-                    _context.Update(contact);
+                    // Copy of original contact
+                    var newContact = await _context.Contacts.FindAsync(contact.Id);
+
+                    if(newImage is not null)
+                    {
+                        newContact.ImageData = await _imageService.ConvertFileToByteArrayAsync(newImage);
+                    }
+
+                    _context.Update(newContact);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
