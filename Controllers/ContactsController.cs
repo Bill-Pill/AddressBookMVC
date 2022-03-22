@@ -16,11 +16,13 @@ namespace AddressBookMVC.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IImageService _imageService;
+        private readonly IConfiguration _configuration;
 
-        public ContactsController(ApplicationDbContext context, IImageService imageService)
+        public ContactsController(ApplicationDbContext context, IImageService imageService, IConfiguration configuration)
         {
             _context = context;
             _imageService = imageService;
+            _configuration = configuration;
         }
 
         // GET: Contacts
@@ -68,6 +70,11 @@ namespace AddressBookMVC.Controllers
                 {
                     contact.ImageData = await _imageService.ConvertFileToByteArrayAsync(contact.ImageFile);
                     contact.ImageType = contact.ImageFile.ContentType;
+                }
+                else
+                {
+                    contact.ImageData = await _imageService.ConvertFileToByteArrayAsync(_configuration["DefaultUserImage"]);
+                    contact.ImageType = Path.GetExtension(_configuration["DefaultUserImage"]);
                 }
 
                 _context.Add(contact);
