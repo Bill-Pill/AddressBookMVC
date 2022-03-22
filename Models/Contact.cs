@@ -25,6 +25,7 @@ namespace AddressBookMVC.Models
         [DataType(DataType.PhoneNumber)]
         public string ?Phone { get; set; }
         public DateTime ?Created { get; set; }
+
         [NotMapped]
         [Display(Name = "Image")]
         [DataType(DataType.Upload)]

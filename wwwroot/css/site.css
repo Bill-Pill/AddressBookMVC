@@ -72,3 +72,10 @@ h6 {
 .checklist > li i {
     color: var(--secondary-color)
 }
+
+dl {
+    font-size: 1.3em;
+}
+
+.edit-form {
+    font-size: 1.1em;
