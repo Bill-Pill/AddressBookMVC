@@ -20,5 +20,11 @@ namespace AddressBookMVC.Services
 
             return byteFile;
         }
+
+        public async Task<byte[]> ConvertFileToByteArrayAsync(string fileName)
+        {
+            var file = $"{Directory.GetCurrentDirectory()}/wwwroot/img/{fileName}";
+            return await File.ReadAllBytesAsync(file);
+        }
     }
 }
